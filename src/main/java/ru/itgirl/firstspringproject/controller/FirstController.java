@@ -18,13 +18,13 @@ public class FirstController {
         SUNDAY;
     }
 
-    Day days;
+    DayOfWeekEnum days;
 
     @GetMapping("/dayOfWeek")
     public String dayOfWeek(@RequestParam(value = "name", defaultValue = "World") String name) {
 
         try {
-            days = Day.valueOf(name);
+            days = DayOfWeekEnum.valueOf(name);
         } catch (IllegalArgumentException e) {
             return String.format("Hello %s!", name);
         }
